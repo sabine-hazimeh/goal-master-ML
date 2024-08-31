@@ -38,3 +38,4 @@ def recommend():
         total_hours = calculate_available_hours(current_date, target_date, available_hours_per_day, available_days_per_week)
     except ValueError as e:
         return jsonify({"error": str(e)}), 400
+    df_filtered = df[df['Course Title'].str.contains(desired_course, case=False, na=False)]
