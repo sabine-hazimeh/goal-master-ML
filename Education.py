@@ -60,3 +60,5 @@ def recommend():
     else:
         return jsonify({"message": "No courses fit within the available hours. Consider adjusting your plan."}), 200
 
+if __name__ == '__main__':
+    app.run(debug=True, port=5000)
