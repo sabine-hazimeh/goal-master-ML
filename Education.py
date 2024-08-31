@@ -10,3 +10,6 @@ app = Flask(__name__)
 CORS(app)  
 
 df = pd.read_csv(r'C:/Users/Admin/Desktop/Education_Cleaned.csv')
+
+label_encoder = LabelEncoder()
+df['Level_encoded'] = label_encoder.fit_transform(df['Level'])
