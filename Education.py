@@ -34,3 +34,7 @@ def recommend():
     current_level = data.get('current_level')
     target_date = datetime.strptime(target_date_str, "%Y-%m-%d")
     current_date = datetime.now()
+    try:
+        total_hours = calculate_available_hours(current_date, target_date, available_hours_per_day, available_days_per_week)
+    except ValueError as e:
+        return jsonify({"error": str(e)}), 400
