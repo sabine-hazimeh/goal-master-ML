@@ -44,3 +44,9 @@ def recommend():
     features_scaled = scaler.fit_transform(features)
     knn = NearestNeighbors(n_neighbors=20, algorithm='auto')
     knn.fit(features_scaled)
+    user_level_encoded = label_encoder.transform([current_level])[0]
+    user_input_df = pd.DataFrame(
+        [[total_hours, user_level_encoded]],
+        columns=['Duration to complete (Approx.)', 'Level_encoded']
+    )
+    user_input_scaled = scaler.transform(user_input_df)
