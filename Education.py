@@ -42,3 +42,5 @@ def recommend():
     features = df_filtered[['Duration to complete (Approx.)', 'Level_encoded']]
     scaler = StandardScaler()
     features_scaled = scaler.fit_transform(features)
+    knn = NearestNeighbors(n_neighbors=20, algorithm='auto')
+    knn.fit(features_scaled)
