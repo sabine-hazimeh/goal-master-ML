@@ -51,3 +51,12 @@ def recommend():
     )
     user_input_scaled = scaler.transform(user_input_df)
     distances, indices = knn.kneighbors(user_input_scaled)
+    recommended_courses = df_filtered.iloc[indices[0]]
+
+    if not recommended_courses.empty:
+        result = recommended_courses[['Course Title', 'Duration to complete (Approx.)', 'Level', 'Course Url']].to_dict(orient='records')
+        return jsonify({"recommended_courses": result})
+
+    else:
+        return jsonify({"message": "No courses fit within the available hours. Consider adjusting your plan."}), 200
+
