@@ -39,3 +39,4 @@ def recommend():
     except ValueError as e:
         return jsonify({"error": str(e)}), 400
     df_filtered = df[df['Course Title'].str.contains(desired_course, case=False, na=False)]
+    features = df_filtered[['Duration to complete (Approx.)', 'Level_encoded']]
