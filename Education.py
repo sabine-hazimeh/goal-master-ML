@@ -24,3 +24,13 @@ def calculate_available_hours(start_date, end_date, daily_hours, weekly_days):
     
     total_hours = (full_weeks * weekly_days + min(remaining_days, weekly_days)) * daily_hours
     return total_hours
+@app.route('/recommend', methods=['POST'])
+def recommend():
+    data = request.json
+    desired_course = data.get('desired_course')
+    available_hours_per_day = data.get('available_hours_per_day')
+    available_days_per_week = data.get('available_days_per_week')
+    target_date_str = data.get('target_date')
+    current_level = data.get('current_level')
+    target_date = datetime.strptime(target_date_str, "%Y-%m-%d")
+    current_date = datetime.now()
