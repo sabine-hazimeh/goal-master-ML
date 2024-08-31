@@ -50,3 +50,4 @@ def recommend():
         columns=['Duration to complete (Approx.)', 'Level_encoded']
     )
     user_input_scaled = scaler.transform(user_input_df)
+    distances, indices = knn.kneighbors(user_input_scaled)
