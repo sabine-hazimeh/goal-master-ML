@@ -5,3 +5,8 @@ from sklearn.neighbors import NearestNeighbors
 from sklearn.preprocessing import StandardScaler, LabelEncoder
 import numpy as np
 from datetime import datetime
+
+app = Flask(__name__)
+CORS(app)  
+
+df = pd.read_csv(r'C:/Users/Admin/Desktop/Education_Cleaned.csv')
