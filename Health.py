@@ -30,3 +30,13 @@ def remove_outliers(df, column):
 columns_to_check = ['Age', 'Height', 'Weight', 'BMI']
 for column in columns_to_check:
     df = remove_outliers(df, column)
+
+df['Exercise Plan Description'] = df['Exercise Recommendation Plan'].map({
+    1: "Light Exercise",
+    2: "Moderate Exercise",
+    3: "Intense Exercise",
+    4: "Cardio Focused",
+    5: "Strength Training",
+    6: "Flexibility Training",
+    7: "Comprehensive Plan"
+})
