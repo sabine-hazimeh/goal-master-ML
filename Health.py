@@ -119,3 +119,9 @@ def predict():
             "ideal_times": "Can be spread out throughout the day, with different types of exercises at different times."
         }
     }
+
+    predicted_plan = exercise_details.get(predicted_plan_code, {
+        "name": "Unknown Plan",
+        "explanation": "No information available for this plan.",
+        "ideal_times": "No suggested times available."
+    })
