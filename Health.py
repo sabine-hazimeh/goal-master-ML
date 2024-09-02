@@ -40,3 +40,6 @@ df['Exercise Plan Description'] = df['Exercise Recommendation Plan'].map({
     6: "Flexibility Training",
     7: "Comprehensive Plan"
 })
+
+df['Height_to_Weight_Ratio'] = df['Height'] / df['Weight']
+df['BMI_Age_Interaction'] = df['BMI'] * df['Age']
