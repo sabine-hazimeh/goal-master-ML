@@ -75,3 +75,6 @@ def predict():
         'Height_to_Weight_Ratio': [height / weight],
         'BMI_Age_Interaction': [(weight / (height/100)**2) * age]
     })
+
+    input_encoded = pd.get_dummies(input_df, columns=['Gender', 'BMIcase'])
+    input_encoded = input_encoded.reindex(columns=X_train.columns, fill_value=0)
