@@ -125,3 +125,9 @@ def predict():
         "explanation": "No information available for this plan.",
         "ideal_times": "No suggested times available."
     })
+
+    return jsonify({
+        'predicted_plan': predicted_plan['name'],
+        'explanation': predicted_plan['explanation'],
+        'ideal_times': predicted_plan['ideal_times']
+    })
