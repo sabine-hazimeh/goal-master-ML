@@ -48,3 +48,5 @@ df_encoded = pd.get_dummies(df, columns=['Gender', 'BMIcase'])
 
 X = df_encoded.drop(['Exercise Recommendation Plan', 'Exercise Plan Description'], axis=1)
 y = df_encoded[['Exercise Recommendation Plan']]
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
