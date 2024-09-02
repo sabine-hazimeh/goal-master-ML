@@ -78,3 +78,6 @@ def predict():
 
     input_encoded = pd.get_dummies(input_df, columns=['Gender', 'BMIcase'])
     input_encoded = input_encoded.reindex(columns=X_train.columns, fill_value=0)
+
+    prediction = model.predict(input_encoded)[0]
+    predicted_plan_code = round(prediction)
