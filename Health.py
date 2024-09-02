@@ -26,3 +26,7 @@ def remove_outliers(df, column):
     upper_bound = Q3 + 1.5 * IQR
     df = df[(df[column] >= lower_bound) & (df[column] <= upper_bound)]
     return df
+
+columns_to_check = ['Age', 'Height', 'Weight', 'BMI']
+for column in columns_to_check:
+    df = remove_outliers(df, column)
