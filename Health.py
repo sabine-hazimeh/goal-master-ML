@@ -64,3 +64,14 @@ def predict():
     gender = data['gender']
     height = data['height']
     weight = data['weight']
+
+    input_df = pd.DataFrame({
+        'Age': [age],
+        'Gender': [gender],
+        'Height': [height],
+        'Weight': [weight],
+        'BMI': [weight / (height/100)**2],
+        'BMIcase': ['Normal' if weight / (height/100)**2 < 25 else 'Overweight'],
+        'Height_to_Weight_Ratio': [height / weight],
+        'BMI_Age_Interaction': [(weight / (height/100)**2) * age]
+    })
