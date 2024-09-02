@@ -13,3 +13,5 @@ from flask_cors import CORS
 warnings.filterwarnings('ignore')
 app = Flask(__name__)
 CORS(app) 
+
+df = pd.read_csv('C:/Users/Admin/Downloads/final_dataset.csv')
