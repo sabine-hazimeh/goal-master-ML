@@ -56,3 +56,11 @@ model.fit(X_train, y_train)
 joblib.dump(model, 'model.pkl')
 
 model = joblib.load('model.pkl')
+
+@app.route('/predict', methods=['POST'])
+def predict():
+    data = request.get_json()
+    age = data['age']
+    gender = data['gender']
+    height = data['height']
+    weight = data['weight']
