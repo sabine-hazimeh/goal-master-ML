@@ -81,3 +81,41 @@ def predict():
 
     prediction = model.predict(input_encoded)[0]
     predicted_plan_code = round(prediction)
+
+    exercise_details = {
+        1: {
+            "name": "Light Exercise",
+            "explanation": "Light exercise includes activities like walking or light stretching.",
+            "ideal_times": "Ideal to perform in the morning before breakfast or in the evening after work."
+        },
+        2: {
+            "name": "Moderate Exercise",
+            "explanation": "Moderate exercise includes activities like brisk walking or light jogging.",
+            "ideal_times": "Best performed in the morning or early evening."
+        },
+        3: {
+            "name": "Intense Exercise",
+            "explanation": "Intense exercise includes activities like running, HIIT, or heavy weight lifting.",
+            "ideal_times": "Preferably done in the morning when your energy levels are high."
+        },
+        4: {
+            "name": "Cardio Focused",
+            "explanation": "Cardio exercises like running, cycling, or swimming that increase your heart rate.",
+            "ideal_times": "Ideal to perform early in the morning on an empty stomach."
+        },
+        5: {
+            "name": "Strength Training",
+            "explanation": "Strength training includes exercises like weight lifting or bodyweight exercises.",
+            "ideal_times": "Best performed in the afternoon or evening after meals."
+        },
+        6: {
+            "name": "Flexibility Training",
+            "explanation": "Flexibility training includes yoga, pilates, or stretching exercises.",
+            "ideal_times": "Ideal for morning or before bed to relax your body."
+        },
+        7: {
+            "name": "Comprehensive Plan",
+            "explanation": "A balanced plan including cardio, strength, and flexibility exercises.",
+            "ideal_times": "Can be spread out throughout the day, with different types of exercises at different times."
+        }
+    }
