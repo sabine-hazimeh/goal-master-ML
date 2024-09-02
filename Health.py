@@ -131,3 +131,6 @@ def predict():
         'explanation': predicted_plan['explanation'],
         'ideal_times': predicted_plan['ideal_times']
     })
+
+if __name__ == '__main__':
+    app.run(debug=True, port=5001)
