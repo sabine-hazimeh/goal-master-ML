@@ -45,3 +45,6 @@ df['Height_to_Weight_Ratio'] = df['Height'] / df['Weight']
 df['BMI_Age_Interaction'] = df['BMI'] * df['Age']
 
 df_encoded = pd.get_dummies(df, columns=['Gender', 'BMIcase'])
+
+X = df_encoded.drop(['Exercise Recommendation Plan', 'Exercise Plan Description'], axis=1)
+y = df_encoded[['Exercise Recommendation Plan']]
