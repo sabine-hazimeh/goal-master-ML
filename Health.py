@@ -9,3 +9,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import warnings
 from flask_cors import CORS
+
+warnings.filterwarnings('ignore')
+app = Flask(__name__)
+CORS(app) 
