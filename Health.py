@@ -15,3 +15,5 @@ app = Flask(__name__)
 CORS(app) 
 
 df = pd.read_csv('C:/Users/Admin/Downloads/final_dataset.csv')
+
+df = df.dropna()
