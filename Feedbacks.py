@@ -32,3 +32,6 @@ def get_sentiment_data():
 
     return jsonify(sentiment_over_time.to_dict(orient='records'))
 
+if __name__ == '__main__':
+    app.run(port=5002)
+
