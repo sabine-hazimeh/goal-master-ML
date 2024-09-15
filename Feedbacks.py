@@ -17,3 +17,11 @@ def get_sentiment_data():
     query = "SELECT emotion, created_at FROM emotions WHERE type = 'detected'"
     df = pd.read_sql(query, conn)
     conn.close()
+    emotion_mapping = {
+        'happy': 2,
+        'neutral': 0,
+        'sad': -1,
+        'angry': -2,
+        'surprised': 1
+    }
+
