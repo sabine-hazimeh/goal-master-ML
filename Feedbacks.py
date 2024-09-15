@@ -15,3 +15,5 @@ def get_sentiment_data():
         database="goal_master_db"
     )
     query = "SELECT emotion, created_at FROM emotions WHERE type = 'detected'"
+    df = pd.read_sql(query, conn)
+    conn.close()
