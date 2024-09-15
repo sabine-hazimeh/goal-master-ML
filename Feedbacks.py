@@ -25,4 +25,5 @@ def get_sentiment_data():
         'surprised': 1
     }
     df['sentiment_score'] = df['emotion'].map(emotion_mapping)
+    df['created_at'] = pd.to_datetime(df['created_at'])
 
