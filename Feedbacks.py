@@ -30,3 +30,5 @@ def get_sentiment_data():
     sentiment_over_time = df.groupby(df['created_at'].dt.date)['sentiment_score'].mean().reset_index()
     sentiment_over_time.columns = ['date', 'average_sentiment']
 
+    return jsonify(sentiment_over_time.to_dict(orient='records'))
+
