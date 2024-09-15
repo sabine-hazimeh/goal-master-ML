@@ -27,3 +27,6 @@ def get_sentiment_data():
     df['sentiment_score'] = df['emotion'].map(emotion_mapping)
     df['created_at'] = pd.to_datetime(df['created_at'])
 
+    sentiment_over_time = df.groupby(df['created_at'].dt.date)['sentiment_score'].mean().reset_index()
+    sentiment_over_time.columns = ['date', 'average_sentiment']
+
