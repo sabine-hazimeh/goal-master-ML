@@ -14,3 +14,4 @@ def get_sentiment_data():
         password="",
         database="goal_master_db"
     )
+    query = "SELECT emotion, created_at FROM emotions WHERE type = 'detected'"
