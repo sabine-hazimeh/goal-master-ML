@@ -24,4 +24,5 @@ def get_sentiment_data():
         'angry': -2,
         'surprised': 1
     }
+    df['sentiment_score'] = df['emotion'].map(emotion_mapping)
 
